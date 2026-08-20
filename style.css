@@ -99,7 +99,6 @@ div.meterWave {
     height: 1.5em;
     position: relative;
     width: 75%;
-    z-index: -1;
     top: 144.5px;
 }
 
