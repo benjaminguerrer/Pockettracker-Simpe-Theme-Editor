@@ -1,0 +1,359 @@
+@font-face {
+    font-family: 'QuinqueFive';
+    src: url('font/QuinqueFive.ttf');
+}
+
+body {
+    font-family: 'QuinqueFive', sans-serif;
+    font-size: 10px;
+    line-height: 0.4;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+h1 {
+    width: 100%;
+}
+
+div.projectScreen {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border: 3px solid;
+    background-color: white;
+    color: black;
+}
+
+div.meters {
+    width: 100%
+}
+
+div.meterBackground {
+    height: 4em;
+    width: 100%;
+}
+
+div.meterCenterLine {
+    position: relative;
+    top: 50%;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+div.meterWave {
+    position: relative;
+    top: 50%;
+    height: 2px;
+    width: 100%;
+    rotate:4deg;
+    background-color: black;
+}
+
+.projectMain {
+    width: 370px;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: row;
+}
+
+.projectBlock1 {
+    flex-direction: row;
+    display: flex;
+    flex-flow: row;
+}
+
+.projectColumn1 {
+    margin-right: 10px;
+}
+
+.projectColumn2 {
+    margin-top: 10.3%;
+}
+
+
+.playingBlock {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 0em;
+}
+
+.Playing {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    line-height: 0;
+}
+
+.Navigation {
+    line-height: 0.1;
+}
+
+#marker {
+    height: 1.5em;
+    position: relative;
+    width: 75%;
+    z-index: -1;
+    top: 144.5px;
+}
+
+.songScreen {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 370px;
+    aspect-ratio: 4/3;
+    border: 3px solid;
+    background-color: white;
+    color: black;
+}
+
+.songMain {
+    display: flex;
+    flex-direction: row;
+}
+
+.songSequence {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    flex-wrap: wrap;
+    line-height: 1.2em;
+    row-gap: 0;
+}
+
+.songSequence div {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.songSequence div > p {
+    width: 11.11%;
+    margin: 0px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.sequenceFourth {
+}
+
+.sequenceMarked {
+
+}
+
+.sequencePlayhead {
+}
+
+
+#marker2 {
+    height: 1.5em;
+    position: relative;
+    width: 75%;
+    z-index: -1;
+    top: 102px;
+}
+
+.mixerScreen {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    aspect-ratio: 4/3;
+    padding: 8px;
+    border: 3px solid;
+    background-color: white;
+    color: black;
+}
+
+.mixerMain {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.mixerMeters {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.mixerBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mixerTop {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.mixerBottom {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.mixerMaster {
+
+}
+
+.mixerText {
+    position: absolute;
+    margin: 2.5px 0 0 221px;
+    justify-self: flex-start;
+    width: 90px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.mixerText p {
+    margin: 0px;
+    width: 50%;
+}
+
+.masterChannel {
+    height: 120px;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mixerChannel {
+    height: 90px;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.leftChannel {
+    margin: 0px;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-right: 1.5px solid;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.rightChannel {
+    margin: 0px;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-left: 1.5px solid;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.low {
+    width: 100%;
+    height: 60%;
+}
+
+.mid {
+    width: 100%;
+    height: 30%;
+}
+.high {
+    width: 100%;
+    height: 10%;
+}
+
+.instrumentScreen {
+    display: flex;
+    width: 370px;
+    aspect-ratio: 4/3;
+    border: 3px solid;
+}
+
+div.songScreen {
+}
+
+div.mixerScreen {
+}
+
+div.instrumentScreen {
+}
+
+.colorSelector {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    line-height: 1.3em;
+    column-gap: 20px;
+    row-gap: 0px;
+}
+
+.colorSelector div {
+    width: 20%;
+    height: 17px;
+    margin-bottom: 80px;
+}
+
+.colorSelector div > p {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+
+.colorSelector div > input {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: blue;
+    position: relative;
+}
+
+.pageBG {
+    display: flex;
+    font-size: large;
+
+}
+
+#toggle {
+    width: 80px;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    border: 0px;
+}
+
+#toggle:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+
+
+#selected {
+
+}
