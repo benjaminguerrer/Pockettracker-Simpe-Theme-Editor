@@ -246,8 +246,8 @@ div.meterWave {
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid;
-    border-right: 1.5px solid;
+    border: 2px solid #ababab;
+    border-right: 1.5px solid #ababab;
     display: flex;
     flex-direction: column-reverse;
 }
@@ -257,8 +257,8 @@ div.meterWave {
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid;
-    border-left: 1.5px solid;
+    border: 2px solid #ababab;
+    border-left: 1px solid #ababab;
     display: flex;
     flex-direction: column-reverse;
 }
