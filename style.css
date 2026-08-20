@@ -3,6 +3,10 @@
     src: url('font/QuinqueFive.ttf');
 }
 
+:root {
+  --mixerborder-color: #4b4b4b;
+}
+
 body {
     font-family: 'QuinqueFive', sans-serif;
     font-size: 10px;
@@ -246,8 +250,8 @@ div.meterWave {
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid #ababab;
-    border-right: 1.5px solid #ababab;
+    border: 2px solid var(--mixerborder-color);
+    border-right: 1.5px solid var(--mixerborder-color);
     display: flex;
     flex-direction: column-reverse;
 }
@@ -257,8 +261,8 @@ div.meterWave {
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    border: 2px solid #ababab;
-    border-left: 1px solid #ababab;
+    border: 2px solid var(--mixerborder-color);
+    border-left: 1px solid var(--mixerborder-color);
     display: flex;
     flex-direction: column-reverse;
 }
