@@ -575,15 +575,18 @@ const userData = {
     meterBorder: hexToArgb32(picker18.color.string('hex')),
 }
 
-function exportToJSON(data, filename = document.getElementById('name').value ? document.getElementById('name').value : "Default" + ".ptt") {
-    const updatedUserData = {name: document.getElementById('name').value ? document.getElementById('name').value : "Default", ...data };
+function exportToJSON(data) {
+    const name = document.getElementById('name').value || "Default";
+
+    const updatedUserData = {name: name, ...data };
+
     const jsonString = JSON.stringify(updatedUserData, null, 2);
     const blob = new Blob([jsonString], {type: "application/json"});
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement("a");
     link.href = url;
-    link.download = filename;
+    link.download = `${name}.ptt`;
 
     document.body.appendChild(link);
     link.click();
