@@ -165,6 +165,25 @@ const picker18 = new ColorPicker(mtrBorder, {
   dialogPlacement: 'bottom',
 })
 
+picker1.setColor('#0A0A0A');
+picker2.setColor('#151515');
+picker3.setColor('#333333');
+picker4.setColor('#001144');
+picker5.setColor('#002266');
+picker6.setColor('#88ceff');
+picker7.setColor('#4488AA');
+picker8.setColor('#AADDFF');
+picker9.setColor('#00FFFF');
+picker10.setColor('#224466');
+picker11.setColor('#0a0a0a');
+picker12.setColor('#112244');
+picker13.setColor('#0088ff');
+picker14.setColor('#1a1a1a');
+picker15.setColor('#0088CC');
+picker16.setColor('#0044cc');
+picker17.setColor('#8800cc');
+picker18.setColor('#555555');
+
 
 toggleLight.addEventListener('click', (event) => {
     if (toggleState == false) {
@@ -434,24 +453,7 @@ function setMtrBorder(color) {
     document.querySelector(".color18").innerHTML = color;
 }
 
-picker1.setColor('#0A0A0A');
-picker2.setColor('#151515');
-picker3.setColor('#333333');
-picker4.setColor('#001144');
-picker5.setColor('#002266');
-picker6.setColor('#88ceff');
-picker7.setColor('#4488AA');
-picker8.setColor('#AADDFF');
-picker9.setColor('#00FFFF');
-picker10.setColor('#224466');
-picker11.setColor('#0a0a0a');
-picker12.setColor('#112244');
-picker13.setColor('#0088ff');
-picker14.setColor('#1a1a1a');
-picker15.setColor('#0088CC');
-picker16.setColor('#0044cc');
-picker17.setColor('#8800cc');
-picker18.setColor('#555555')
+
 
 setColorBackground(picker1.color.string('hex'));
 picker1.on('pick', (event) => {
@@ -553,34 +555,33 @@ function hexToArgb32(hex) {
     return parseInt(hex, 16);
 }
 
-
-const userData = {
-    background: hexToArgb32(picker1.color.string('hex')),
-    rowEvery4th: hexToArgb32(picker2.color.string('hex')),
-    rowCursor: hexToArgb32(picker3.color.string('hex')),
-    rowPlayback: hexToArgb32(picker4.color.string('hex')),
-    rowSelection: hexToArgb32(picker5.color.string('hex')),
-    textTitle: hexToArgb32(picker6.color.string('hex')),
-    textParam: hexToArgb32(picker7.color.string('hex')),
-    textValue: hexToArgb32(picker8.color.string('hex')),
-    textCursor: hexToArgb32(picker9.color.string('hex')),
-    textEmpty: hexToArgb32(picker10.color.string('hex')),
-    vizBackground: hexToArgb32(picker11.color.string('hex')),
-    vizCenterLine: hexToArgb32(picker12.color.string('hex')),
-    vizCenterWave: hexToArgb32(picker13.color.string('hex')),
-    meterBackground: hexToArgb32(picker14.color.string('hex')),
-    meterLow: hexToArgb32(picker15.color.string('hex')),
-    meterMid: hexToArgb32(picker16.color.string('hex')),
-    meterHigh: hexToArgb32(picker17.color.string('hex')),
-    meterBorder: hexToArgb32(picker18.color.string('hex')),
-}
-
-function exportToJSON(data) {
+function exportToJSON() {
     const name = document.getElementById('name').value || "Default";
 
-    const updatedUserData = {name: name, ...data };
+    const userData = {
+        name: name, 
+        background: hexToArgb32(picker1.color.string('hex')),
+        rowEvery4th: hexToArgb32(picker2.color.string('hex')),
+        rowCursor: hexToArgb32(picker3.color.string('hex')),
+        rowPlayback: hexToArgb32(picker4.color.string('hex')),
+        rowSelection: hexToArgb32(picker5.color.string('hex')),
+        textTitle: hexToArgb32(picker6.color.string('hex')),
+        textParam: hexToArgb32(picker7.color.string('hex')),
+        textValue: hexToArgb32(picker8.color.string('hex')),
+        textCursor: hexToArgb32(picker9.color.string('hex')),
+        textEmpty: hexToArgb32(picker10.color.string('hex')),
+        vizBackground: hexToArgb32(picker11.color.string('hex')),
+        vizCenterLine: hexToArgb32(picker12.color.string('hex')),
+        vizWave: hexToArgb32(picker13.color.string('hex')),
+        meterBackground: hexToArgb32(picker14.color.string('hex')),
+        meterLow: hexToArgb32(picker15.color.string('hex')),
+        meterMid: hexToArgb32(picker16.color.string('hex')),
+        meterHigh: hexToArgb32(picker17.color.string('hex')),
+        meterBorder: hexToArgb32(picker18.color.string('hex')),
+        visualizerType: "OCTA", 
+    };
 
-    const jsonString = JSON.stringify(updatedUserData, null, 2);
+    const jsonString = JSON.stringify(userData, null, 4);
     const blob = new Blob([jsonString], {type: "application/json"});
     const url = URL.createObjectURL(blob);
 
@@ -595,5 +596,5 @@ function exportToJSON(data) {
 }
 
 exportButton.addEventListener('click', (event) => {
-    exportToJSON(userData);
+    exportToJSON();
 })
