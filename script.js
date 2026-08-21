@@ -15,7 +15,6 @@ const mtrBG = document.getElementById('14');
 const mtrLow = document.getElementById('15');
 const mtrMid = document.getElementById('16');
 const mtrHigh = document.getElementById('17');
-const pageBG = document.getElementById('18');
 const toggleLight = document.getElementById('toggle');
 let toggleState = false;
 
@@ -157,6 +156,252 @@ const picker17 = new ColorPicker(mtrHigh, {
   dialogPlacement: 'bottom',
 })
 
+
+toggleLight.addEventListener('click', (event) => {
+    if (toggleState == false) {
+        document.querySelector('body').style.color = "#000000";
+        document.querySelector('body').style.background = "#ffffff";
+        document.querySelector('#toggle').style.background = "#000000"
+        document.documentElement.dataset.cpTheme = "light";
+        document.documentElement.dataset.bsTheme = "light";
+        toggleState = true;
+    } else if (toggleState == true) {
+        document.querySelector('body').style.color = "#ffffff";
+        document.querySelector('body').style.background = "#000000";
+        document.querySelector('#toggle').style.background = "#ffffff"
+        document.documentElement.dataset.cpTheme = "dark";
+        document.documentElement.dataset.bsTheme = "dark";
+        toggleState = false;
+    }
+})
+
+
+
+function setColorBackground(color) {
+    console.log(color);
+    let affectedElements = [
+        document.querySelectorAll(".projectScreen"),
+        document.querySelectorAll(".songScreen"),
+        document.querySelectorAll(".mixerScreen"),
+        document.querySelectorAll(".instrumentScreen")
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+        }
+    }
+    document.querySelector(".color1").innerHTML = color;
+}
+
+function setRow4th(color) {
+    let affectedElements = [
+        document.querySelectorAll(".sequenceFourth")
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+        }
+    }
+    document.querySelector(".color2").innerHTML = color;
+}
+
+function setRowCursor(color) {
+    let affectedElements = [
+        document.querySelectorAll(".sequenceMarked"),
+        document.querySelectorAll("#marker"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+        }
+    }
+    let borderedElements = document.querySelectorAll("#selected")
+    borderedElements.forEach(element => {
+        element.style.borderColor = color;
+    });
+    document.querySelector(".color3").innerHTML = color;
+}
+
+function setRowPlay(color) {
+    let affectedElements = [
+        document.querySelectorAll(".sequencePlayhead"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+        }
+    }
+    document.querySelector(".color4").innerHTML = color;
+}
+
+function setRowSelect(color) {
+     let affectedElements = [
+        document.querySelectorAll(".sequenceSelect"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+        }
+    }
+    document.querySelector(".color5").innerHTML = color;
+}
+
+function setTxtTitle(color) {
+    let affectedElements = [
+        document.querySelectorAll(".songTitle"),
+        document.querySelectorAll(".projectTitle"),
+        document.querySelectorAll(".mixerTitle"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.color = color;
+        }
+    }
+    document.querySelector(".color6").innerHTML = color;
+}
+
+function setTxtParam(color) {
+    let affectedElements = [
+        document.querySelectorAll("#param"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.color = color;
+        }
+    }
+    document.querySelector(".color7").innerHTML = color;
+}
+
+function setTxtValue(color) {
+    let affectedElements = [
+        document.querySelectorAll("#value"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.color = color;
+        }
+    }
+    document.querySelector(".color8").innerHTML = color;
+}
+
+function setTxtCursor(color) {
+    let affectedElements = [
+        document.querySelectorAll("#txtCursor"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.color = color;
+            affectedElements[i][j].style.borderColor = color;
+        }
+    }
+    document.querySelector(".color9").innerHTML = color;
+}
+
+function setTxtEmpty(color) {
+    let affectedElements = [
+        document.querySelectorAll("#txtEmpty"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.color = color;
+            
+        }
+    }
+    document.querySelector(".color10").innerHTML = color;
+}
+
+function setVizBg(color) {
+    let affectedElements = [
+        document.querySelectorAll(".meterBackground"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color11").innerHTML = color;
+}
+
+function setVizLine(color) {
+    let affectedElements = [
+        document.querySelectorAll(".meterCenterLine"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color12").innerHTML = color;
+}
+
+function setVizWave(color) {
+    let affectedElements = [
+        document.querySelectorAll(".meterWave"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color13").innerHTML = color;
+}
+
+function setMtrBg(color) {
+    let affectedElements = [
+        document.querySelectorAll(".leftChannel"),
+        document.querySelectorAll(".rightChannel"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color14").innerHTML = color;
+}
+
+function setMtrLow(color) {
+    let affectedElements = [
+        document.querySelectorAll(".low"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color15").innerHTML = color;
+}
+
+function setMtrMid(color) {
+    let affectedElements = [
+        document.querySelectorAll(".mid"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color16").innerHTML = color;
+}
+
+function setMtrHigh(color) {
+    let affectedElements = [
+        document.querySelectorAll(".high"),
+    ]
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.background = color;
+            
+        }
+    }
+    document.querySelector(".color17").innerHTML = color;
+}
+
 picker1.setColor('#0A0A0A');
 picker2.setColor('#151515');
 picker3.setColor('#333333');
@@ -175,278 +420,87 @@ picker15.setColor('#0088CC');
 picker16.setColor('#0044cc');
 picker17.setColor('#8800cc');
 
-
-
-toggleLight.addEventListener('click', (event) => {
-    if (toggleState == false) {
-        document.querySelector('body').style.color = "#000000";
-        document.querySelector('body').style.background = "#ffffff";
-        document.querySelector('#toggle').style.background = "#000000"
-        document.documentElement.dataset.cpTheme = "light";
-        document.documentElement.dataset.bsTheme = "light";
-        toggleState = true;
-    } else if (toggleState == true) {
-        document.querySelector('body').style.color = "#ffffff";
-        document.querySelector('body').style.background = "#000000";
-        document.querySelector('#toggle').style.background = "#ffffff"
-        document.documentElement.dataset.cpTheme = "dark";
-        document.documentElement.dataset.bsTheme = "dark";
-        toggleState = true;
-        toggleState = false;
-    }
-})
-
+setColorBackground(picker1.color.string('hex'));
 picker1.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".projectScreen"),
-        document.querySelectorAll(".songScreen"),
-        document.querySelectorAll(".mixerScreen"),
-        document.querySelectorAll(".instrumentScreen")
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-        }
-    }
-    document.querySelector(".color1").innerHTML = selectedColor
+    setColorBackground(event);
 })
 
+setRow4th(picker2.color.string('hex'))
 picker2.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".sequenceFourth")
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-        }
-    }
-    document.querySelector(".color2").innerHTML = selectedColor
+    setRow4th(event);
 })
 
+setRowCursor(picker3.color.string('hex'))
 picker3.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".sequenceMarked"),
-        document.querySelectorAll("#marker"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-        }
-    }
-    let borderedElements = document.querySelectorAll("#selected")
-    borderedElements.forEach(element => {
-        element.style.borderColor = selectedColor;
-    });
-    document.querySelector(".color3").innerHTML = selectedColor
+    setRowCursor(event);
 })
 
+setRowPlay(picker4.color.string('hex'))
 picker4.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".sequencePlayhead"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-        }
-    }
-    document.querySelector(".color4").innerHTML = selectedColor
+    setRowPlay(event)
 })
 
+setRowSelect(picker5.color.string('hex'))
 picker5.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".sequenceSelect"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-        }
-    }
-    document.querySelector(".color5").innerHTML = selectedColor
+    setRowSelect(event);
 })
 
+setTxtTitle(picker6.color.string('hex'))
 picker6.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".songTitle"),
-        document.querySelectorAll(".projectTitle"),
-        document.querySelectorAll(".mixerTitle"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.color = selectedColor;
-        }
-    }
-    document.querySelector(".color6").innerHTML = selectedColor
+    setTxtTitle(event);
 })
 
+setTxtParam(picker7.color.string('hex'))
 picker7.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll("#param"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.color = selectedColor;
-        }
-    }
-    document.querySelector(".color7").innerHTML = selectedColor
+   setTxtParam(event);
 })
 
+setTxtValue(picker8.color.string('hex'))
 picker8.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll("#value"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.color = selectedColor;
-        }
-    }
-    document.querySelector(".color8").innerHTML = selectedColor
+    setTxtValue(event);
 })
 
+setTxtCursor(picker9.color.string('hex'))
 picker9.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll("#txtCursor"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.color = selectedColor;
-            affectedElements[i][j].style.borderColor = selectedColor;
-        }
-    }
-    document.querySelector(".color9").innerHTML = selectedColor
+    setTxtCursor(event);
 })
 
+setTxtEmpty(picker10.color.string('hex'))
 picker10.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll("#txtEmpty"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.color = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color10").innerHTML = selectedColor
+    setTxtEmpty(event);
 })
 
+setVizBg(picker11.color.string('hex'))
 picker11.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".meterBackground"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color11").innerHTML = selectedColor
+    setVizBg(event);
 })
 
+setVizLine(picker12.color.string('hex'))
 picker12.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".meterCenterLine"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color12").innerHTML = selectedColor
+    setVizLine(event);
 })
 
+setVizWave(picker13.color.string('hex'))
 picker13.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".meterWave"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color13").innerHTML = selectedColor
+    setVizWave(event);
 })
 
+setMtrBg(picker14.color.string('hex'))
 picker14.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".leftChannel"),
-        document.querySelectorAll(".rightChannel"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color14").innerHTML = selectedColor
+    setMtrBg(event);
 })
 
+setMtrLow(picker15.color.string('hex'))
 picker15.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".low"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color15").innerHTML = selectedColor
+    setMtrLow(event);
 })
 
+setMtrMid(picker16.color.string('hex'))
 picker16.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".mid"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color16").innerHTML = selectedColor
+    setMtrMid(event);
 })
 
+setMtrHigh(picker17.color.string('hex'))
 picker17.on('pick', (event) => {
-    const selectedColor = event
-    let affectedElements = [
-        document.querySelectorAll(".high"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color17").innerHTML = selectedColor
-})
-
-pageBG.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
-    let affectedElements = [
-        document.querySelectorAll("body"),
-    ]
-    for (let i = 0; i < affectedElements.length; i++) {
-        for (let j = 0; j < affectedElements[i].length; j++){
-            affectedElements[i][j].style.background = selectedColor;
-            
-        }
-    }
-    document.querySelector(".color18").innerHTML = selectedColor
+    setMtrHigh(event);
 })
