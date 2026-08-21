@@ -4,5 +4,5 @@ This is a simple theme previs/creator for [Pockettracker](https://github.com/con
 
 ## Pending
 
-- [ ] Export theme
+- [x] Export theme
 - [ ] Color Palette Randomization based on OkLab

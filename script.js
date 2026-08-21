@@ -15,7 +15,9 @@ const mtrBG = document.getElementById('14');
 const mtrLow = document.getElementById('15');
 const mtrMid = document.getElementById('16');
 const mtrHigh = document.getElementById('17');
+const mtrBorder = document.getElementById('18');
 const toggleLight = document.getElementById('toggle');
+const exportButton = document.getElementById('export');
 let toggleState = false;
 
 let allColors = [
@@ -36,6 +38,7 @@ let allColors = [
     mtrLow,
     mtrMid,
     mtrHigh,
+    mtrBorder
 ]
 
 const picker1 = new ColorPicker(colorBackground, {
@@ -155,20 +158,36 @@ const picker17 = new ColorPicker(mtrHigh, {
   enableEyedropper: true,
   dialogPlacement: 'bottom',
 })
+const picker18 = new ColorPicker(mtrBorder, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
 
 
 toggleLight.addEventListener('click', (event) => {
     if (toggleState == false) {
         document.querySelector('body').style.color = "#000000";
         document.querySelector('body').style.background = "#ffffff";
-        document.querySelector('#toggle').style.background = "#000000"
+        document.querySelector('#toggle').style.background = "#000000";
+        document.querySelector('#toggle').style.color = "#ffffff";
+        document.querySelector('#name').style.background = "#000000";
+        document.querySelector('#name').style.color = "#ffffff";
+        document.querySelector('#name').classList.add("custom-placeholder");
+        document.querySelector('#export').style.color = "#000000";
         document.documentElement.dataset.cpTheme = "light";
         document.documentElement.dataset.bsTheme = "light";
         toggleState = true;
     } else if (toggleState == true) {
         document.querySelector('body').style.color = "#ffffff";
         document.querySelector('body').style.background = "#000000";
-        document.querySelector('#toggle').style.background = "#ffffff"
+        document.querySelector('#toggle').style.background = "#ffffff";
+        document.querySelector('#toggle').style.color = "#000000";
+        document.querySelector('#name').style.background = "#ffffff";
+        document.querySelector('#name').style.color = "#0a0a0a";
+        document.querySelector('#name').classList.remove("custom-placeholder");
+        document.querySelector('#export').style.color = "#ffffff";
         document.documentElement.dataset.cpTheme = "dark";
         document.documentElement.dataset.bsTheme = "dark";
         toggleState = false;
@@ -178,7 +197,6 @@ toggleLight.addEventListener('click', (event) => {
 
 
 function setColorBackground(color) {
-    console.log(color);
     let affectedElements = [
         document.querySelectorAll(".projectScreen"),
         document.querySelectorAll(".songScreen"),
@@ -402,6 +420,20 @@ function setMtrHigh(color) {
     document.querySelector(".color17").innerHTML = color;
 }
 
+function setMtrBorder(color) {
+    let affectedElements = [
+        document.querySelectorAll("#meterBorder")
+    ]
+    console.log(affectedElements[0])
+    for (let i = 0; i < affectedElements.length; i++) {
+        for (let j = 0; j < affectedElements[i].length; j++){
+            affectedElements[i][j].style.borderColor = color;
+            
+        }
+    }
+    document.querySelector(".color18").innerHTML = color;
+}
+
 picker1.setColor('#0A0A0A');
 picker2.setColor('#151515');
 picker3.setColor('#333333');
@@ -419,6 +451,7 @@ picker14.setColor('#1a1a1a');
 picker15.setColor('#0088CC');
 picker16.setColor('#0044cc');
 picker17.setColor('#8800cc');
+picker18.setColor('#555555')
 
 setColorBackground(picker1.color.string('hex'));
 picker1.on('pick', (event) => {
@@ -503,4 +536,61 @@ picker16.on('pick', (event) => {
 setMtrHigh(picker17.color.string('hex'))
 picker17.on('pick', (event) => {
     setMtrHigh(event);
+})
+
+setMtrBorder(picker18.color.string('hex'))
+picker18.on('pick', (event) => {
+    setMtrBorder(event);
+})
+
+function hexToArgb32(hex) {
+    hex = hex.replace('#', '');
+
+    if (hex.length === 6) {
+        hex = 'FF' + hex;
+    }
+
+    return parseInt(hex, 16);
+}
+
+
+const userData = {
+    background: hexToArgb32(picker1.color.string('hex')),
+    rowEvery4th: hexToArgb32(picker2.color.string('hex')),
+    rowCursor: hexToArgb32(picker3.color.string('hex')),
+    rowPlayback: hexToArgb32(picker4.color.string('hex')),
+    rowSelection: hexToArgb32(picker5.color.string('hex')),
+    textTitle: hexToArgb32(picker6.color.string('hex')),
+    textParam: hexToArgb32(picker7.color.string('hex')),
+    textValue: hexToArgb32(picker8.color.string('hex')),
+    textCursor: hexToArgb32(picker9.color.string('hex')),
+    textEmpty: hexToArgb32(picker10.color.string('hex')),
+    vizBackground: hexToArgb32(picker11.color.string('hex')),
+    vizCenterLine: hexToArgb32(picker12.color.string('hex')),
+    vizCenterWave: hexToArgb32(picker13.color.string('hex')),
+    meterBackground: hexToArgb32(picker14.color.string('hex')),
+    meterLow: hexToArgb32(picker15.color.string('hex')),
+    meterMid: hexToArgb32(picker16.color.string('hex')),
+    meterHigh: hexToArgb32(picker17.color.string('hex')),
+    meterBorder: hexToArgb32(picker18.color.string('hex')),
+}
+
+function exportToJSON(data, filename = document.getElementById('name').value ? document.getElementById('name').value : "Default" + ".ptt") {
+    const updatedUserData = {name: document.getElementById('name').value ? document.getElementById('name').value : "Default", ...data };
+    const jsonString = JSON.stringify(updatedUserData, null, 2);
+    const blob = new Blob([jsonString], {type: "application/json"});
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+exportButton.addEventListener('click', (event) => {
+    exportToJSON(userData);
 })
