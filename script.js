@@ -191,8 +191,9 @@ toggleLight.addEventListener('click', (event) => {
         document.querySelector('body').style.background = "#ffffff";
         document.querySelector('#toggle').style.background = "#000000";
         document.querySelector('#toggle').style.color = "#ffffff";
-        document.querySelector('#name').style.background = "#000000";
-        document.querySelector('#name').style.color = "#ffffff";
+        document.querySelector('#name').style.background = "#ffffff";
+        document.querySelector('#name').style.color = "#000000";
+        document.querySelector('#name').style.borderColor = "#000000";
         document.querySelector('#name').classList.add("custom-placeholder");
         document.querySelector('#export').style.color = "#000000";
         document.documentElement.dataset.cpTheme = "light";
@@ -203,8 +204,9 @@ toggleLight.addEventListener('click', (event) => {
         document.querySelector('body').style.background = "#000000";
         document.querySelector('#toggle').style.background = "#ffffff";
         document.querySelector('#toggle').style.color = "#000000";
-        document.querySelector('#name').style.background = "#ffffff";
-        document.querySelector('#name').style.color = "#0a0a0a";
+        document.querySelector('#name').style.background = "#000000";
+        document.querySelector('#name').style.color = "#ffffff";
+        document.querySelector('#name').style.borderColor = "#ffffff";
         document.querySelector('#name').classList.remove("custom-placeholder");
         document.querySelector('#export').style.color = "#ffffff";
         document.documentElement.dataset.cpTheme = "dark";
