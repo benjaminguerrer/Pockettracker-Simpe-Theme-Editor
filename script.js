@@ -39,22 +39,165 @@ let allColors = [
     mtrHigh,
 ]
 
+const picker1 = new ColorPicker(colorBackground, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker2 = new ColorPicker(row4th, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker3 = new ColorPicker(rowCursor, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker4 = new ColorPicker(rowPlay, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker5 = new ColorPicker(rowSelect, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker6 = new ColorPicker(txtTitle, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker7 = new ColorPicker(txtParam, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker8 = new ColorPicker(txtValue, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker9 = new ColorPicker(txtCursor, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker10 = new ColorPicker(txtEmpty, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker11 = new ColorPicker(vizBG, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker12 = new ColorPicker(vizLine, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker13 = new ColorPicker(vizWave, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker14 = new ColorPicker(mtrBG, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker15 = new ColorPicker(mtrLow, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+const picker16 = new ColorPicker(mtrMid, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+const picker17 = new ColorPicker(mtrHigh, {
+  submitMode: 'instant',
+  enableAlpha: false,
+  enableEyedropper: true,
+  dialogPlacement: 'bottom',
+})
+
+picker1.setColor('#0A0A0A');
+picker2.setColor('#151515');
+picker3.setColor('#333333');
+picker4.setColor('#001144');
+picker5.setColor('#002266');
+picker6.setColor('#88ceff');
+picker7.setColor('#4488AA');
+picker8.setColor('#AADDFF');
+picker9.setColor('#00FFFF');
+picker10.setColor('#224466');
+picker11.setColor('#0a0a0a');
+picker12.setColor('#112244');
+picker13.setColor('#0088ff');
+picker14.setColor('#1a1a1a');
+picker15.setColor('#0088CC');
+picker16.setColor('#0044cc');
+picker17.setColor('#8800cc');
+
+
+
 toggleLight.addEventListener('click', (event) => {
     if (toggleState == false) {
         document.querySelector('body').style.color = "#000000";
         document.querySelector('body').style.background = "#ffffff";
         document.querySelector('#toggle').style.background = "#000000"
+        document.documentElement.dataset.cpTheme = "light";
+        document.documentElement.dataset.bsTheme = "light";
         toggleState = true;
     } else if (toggleState == true) {
         document.querySelector('body').style.color = "#ffffff";
         document.querySelector('body').style.background = "#000000";
         document.querySelector('#toggle').style.background = "#ffffff"
+        document.documentElement.dataset.cpTheme = "dark";
+        document.documentElement.dataset.bsTheme = "dark";
+        toggleState = true;
         toggleState = false;
     }
 })
 
-colorBackground.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker1.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".projectScreen"),
         document.querySelectorAll(".songScreen"),
@@ -69,8 +212,8 @@ colorBackground.addEventListener('input', (event) => {
     document.querySelector(".color1").innerHTML = selectedColor
 })
 
-row4th.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker2.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".sequenceFourth")
     ]
@@ -82,8 +225,8 @@ row4th.addEventListener('input', (event) => {
     document.querySelector(".color2").innerHTML = selectedColor
 })
 
-rowCursor.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker3.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".sequenceMarked"),
         document.querySelectorAll("#marker"),
@@ -100,8 +243,8 @@ rowCursor.addEventListener('input', (event) => {
     document.querySelector(".color3").innerHTML = selectedColor
 })
 
-rowPlay.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker4.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".sequencePlayhead"),
     ]
@@ -113,8 +256,8 @@ rowPlay.addEventListener('input', (event) => {
     document.querySelector(".color4").innerHTML = selectedColor
 })
 
-rowSelect.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker5.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".sequenceSelect"),
     ]
@@ -126,8 +269,8 @@ rowSelect.addEventListener('input', (event) => {
     document.querySelector(".color5").innerHTML = selectedColor
 })
 
-txtTitle.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker6.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".songTitle"),
         document.querySelectorAll(".projectTitle"),
@@ -141,8 +284,8 @@ txtTitle.addEventListener('input', (event) => {
     document.querySelector(".color6").innerHTML = selectedColor
 })
 
-txtParam.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker7.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll("#param"),
     ]
@@ -154,8 +297,8 @@ txtParam.addEventListener('input', (event) => {
     document.querySelector(".color7").innerHTML = selectedColor
 })
 
-txtValue.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker8.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll("#value"),
     ]
@@ -167,8 +310,8 @@ txtValue.addEventListener('input', (event) => {
     document.querySelector(".color8").innerHTML = selectedColor
 })
 
-txtCursor.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker9.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll("#txtCursor"),
     ]
@@ -181,8 +324,8 @@ txtCursor.addEventListener('input', (event) => {
     document.querySelector(".color9").innerHTML = selectedColor
 })
 
-txtEmpty.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker10.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll("#txtEmpty"),
     ]
@@ -195,8 +338,8 @@ txtEmpty.addEventListener('input', (event) => {
     document.querySelector(".color10").innerHTML = selectedColor
 })
 
-vizBG.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker11.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".meterBackground"),
     ]
@@ -209,8 +352,8 @@ vizBG.addEventListener('input', (event) => {
     document.querySelector(".color11").innerHTML = selectedColor
 })
 
-vizLine.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker12.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".meterCenterLine"),
     ]
@@ -223,8 +366,8 @@ vizLine.addEventListener('input', (event) => {
     document.querySelector(".color12").innerHTML = selectedColor
 })
 
-vizWave.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker13.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".meterWave"),
     ]
@@ -237,8 +380,8 @@ vizWave.addEventListener('input', (event) => {
     document.querySelector(".color13").innerHTML = selectedColor
 })
 
-mtrBG.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker14.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".leftChannel"),
         document.querySelectorAll(".rightChannel"),
@@ -252,8 +395,8 @@ mtrBG.addEventListener('input', (event) => {
     document.querySelector(".color14").innerHTML = selectedColor
 })
 
-mtrLow.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker15.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".low"),
     ]
@@ -266,8 +409,8 @@ mtrLow.addEventListener('input', (event) => {
     document.querySelector(".color15").innerHTML = selectedColor
 })
 
-mtrMid.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker16.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".mid"),
     ]
@@ -280,8 +423,8 @@ mtrMid.addEventListener('input', (event) => {
     document.querySelector(".color16").innerHTML = selectedColor
 })
 
-mtrHigh.addEventListener('input', (event) => {
-    const selectedColor = event.target.value
+picker17.on('pick', (event) => {
+    const selectedColor = event
     let affectedElements = [
         document.querySelectorAll(".high"),
     ]

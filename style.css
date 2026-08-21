@@ -306,7 +306,6 @@ div.instrumentScreen {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: center;
     line-height: 1.3em;
     column-gap: 20px;
     row-gap: 0px;
@@ -314,16 +313,18 @@ div.instrumentScreen {
 
 .colorSelector div {
     width: 20%;
-    height: 17px;
-    margin-bottom: 80px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .colorSelector div > p {
     width: 100%;
-    height: 100%;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     text-align: center;
+    gap: 0px;
 }
 
 
@@ -331,14 +332,24 @@ div.instrumentScreen {
     margin: 0px;
     padding: 0px;
     width: 100%;
-    height: 50px;
+    height: 33%;
     background-color: blue;
     position: relative;
+}
+
+div.cp_button {
+    width: 100%;
+    height: 100%;
+}
+
+div.cp_caret {
+    display: grid;
 }
 
 .pageBG {
     display: flex;
     font-size: large;
+    margin-top: 40px;
 
 }
 
