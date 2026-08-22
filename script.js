@@ -187,6 +187,27 @@ const picker18 = new ColorPicker(mtrBorder, {
   formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
+const pickerArr = [
+    picker1,
+    picker2,
+    picker3,
+    picker4,
+    picker5,
+    picker6,
+    picker7,
+    picker8,
+    picker9,
+    picker10,
+    picker11,
+    picker12,
+    picker13,
+    picker14,
+    picker15,
+    picker16,
+    picker17,
+    picker18,
+]
+
 picker1.setColor('#0A0A0A');
 picker2.setColor('#151515');
 picker3.setColor('#333333');
@@ -479,96 +500,142 @@ function setMtrBorder(color) {
     document.querySelector(".color18").innerHTML = color;
 }
 
+function setSwatches() {
+    const swatches = [
+        picker1.color.string('hex'),
+        picker2.color.string('hex'),
+        picker3.color.string('hex'),
+        picker4.color.string('hex'),
+        picker5.color.string('hex'),
+        picker6.color.string('hex'),
+        picker7.color.string('hex'),
+        picker8.color.string('hex'),
+        picker9.color.string('hex'),
+        picker10.color.string('hex'),
+        picker11.color.string('hex'),
+        picker12.color.string('hex'),
+        picker13.color.string('hex'),
+        picker14.color.string('hex'),
+        picker15.color.string('hex'),
+        picker16.color.string('hex'),
+        picker17.color.string('hex'),
+        picker18.color.string('hex'),
+    ]
+    for (let i = 0; i < pickerArr.length; i++) {
+        pickerArr[i].setSwatches(swatches);
+    }
+}
+
+setSwatches();
 
 
 setColorBackground(picker1.color.string('hex'));
 picker1.on('pick', (event) => {
     setColorBackground(event);
+    setSwatches();
 })
 
 setRow4th(picker2.color.string('hex'))
 picker2.on('pick', (event) => {
     setRow4th(event);
+    setSwatches();
+
 })
 
 setRowCursor(picker3.color.string('hex'))
 picker3.on('pick', (event) => {
     setRowCursor(event);
+    setSwatches();
 })
 
 setRowPlay(picker4.color.string('hex'))
 picker4.on('pick', (event) => {
     setRowPlay(event)
+    setSwatches();
 })
 
 setRowSelect(picker5.color.string('hex'))
 picker5.on('pick', (event) => {
     setRowSelect(event);
+    setSwatches();
 })
 
 setTxtTitle(picker6.color.string('hex'))
 picker6.on('pick', (event) => {
     setTxtTitle(event);
+    setSwatches();
 })
 
 setTxtParam(picker7.color.string('hex'))
 picker7.on('pick', (event) => {
    setTxtParam(event);
+   setSwatches();
 })
 
 setTxtValue(picker8.color.string('hex'))
 picker8.on('pick', (event) => {
     setTxtValue(event);
+    setSwatches();
 })
 
 setTxtCursor(picker9.color.string('hex'))
 picker9.on('pick', (event) => {
     setTxtCursor(event);
+    setSwatches();
 })
 
 setTxtEmpty(picker10.color.string('hex'))
 picker10.on('pick', (event) => {
     setTxtEmpty(event);
+    setSwatches();
 })
 
 setVizBg(picker11.color.string('hex'))
 picker11.on('pick', (event) => {
     setVizBg(event);
+    setSwatches();
 })
 
 setVizLine(picker12.color.string('hex'))
 picker12.on('pick', (event) => {
     setVizLine(event);
+    setSwatches();
 })
 
 setVizWave(picker13.color.string('hex'))
 picker13.on('pick', (event) => {
     setVizWave(event);
+    setSwatches();
 })
 
 setMtrBg(picker14.color.string('hex'))
 picker14.on('pick', (event) => {
     setMtrBg(event);
+    setSwatches();
 })
 
 setMtrLow(picker15.color.string('hex'))
 picker15.on('pick', (event) => {
     setMtrLow(event);
+    setSwatches();
 })
 
 setMtrMid(picker16.color.string('hex'))
 picker16.on('pick', (event) => {
     setMtrMid(event);
+    setSwatches();
 })
 
 setMtrHigh(picker17.color.string('hex'))
 picker17.on('pick', (event) => {
     setMtrHigh(event);
+    setSwatches();
 })
 
 setMtrBorder(picker18.color.string('hex'))
 picker18.on('pick', (event) => {
     setMtrBorder(event);
+    setSwatches();
 })
 
 function hexToArgb32(hex) {
