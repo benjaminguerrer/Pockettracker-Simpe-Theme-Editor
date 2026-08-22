@@ -490,7 +490,6 @@ function setMtrBorder(color) {
     let affectedElements = [
         document.querySelectorAll("#meterBorder")
     ]
-    console.log(affectedElements[0])
     for (let i = 0; i < affectedElements.length; i++) {
         for (let j = 0; j < affectedElements[i].length; j++){
             affectedElements[i][j].style.borderColor = color;
@@ -539,7 +538,6 @@ setRow4th(picker2.color.string('hex'))
 picker2.on('pick', (event) => {
     setRow4th(event);
     setSwatches();
-
 })
 
 setRowCursor(picker3.color.string('hex'))
