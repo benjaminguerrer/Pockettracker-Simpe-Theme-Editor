@@ -51,7 +51,7 @@
 
   border: 1px solid var(--cp-border-color);
   width: 100%;
-  overflow: hidden;
+  /*overflow: hidden;*/
   border-radius: var(--cp-border-radius-sm);
   background-color: transparent !important; /* CSS reset */
 }

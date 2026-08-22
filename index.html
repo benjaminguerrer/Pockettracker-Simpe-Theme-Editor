@@ -465,13 +465,17 @@
             </div>
         </div>
     </div>
-    <div class="templateName" style="width: 100%; margin-top: 10px;">
+    <div class="templateName" style="width: 100%; text-align: center;">
         <label for="name" style="font-size: 15px;">Theme Name:</label>
-        <input type="text" name="templateName" id="name" style="font-family: 'QuinqueFive', sans-serif; box-sizing: border-box; padding: 5px; border: 4px hidden white; border-bottom-style: solid; background: black; color: white;" placeholder="Default">
+        <input type="text" name="templateName" id="name" style="font-family: 'QuinqueFive', sans-serif; box-sizing: border-box; padding: 5px; border: 4px hidden white; border-bottom-style: solid; background: black; color: white; width: 200px;" placeholder="Default">
+        <div class="pageBG">
+            <button id="export" style="font-family: 'QuinqueFive'; width: 150px; background-color: rgba(255, 255, 255, 0); color: white;">Export</button>
+            <button id="toggle" style="font-family: 'QuinqueFive'; width: 150px; background-color: rgba(255, 255, 255, 1); color: black; box-sizing: border-box; padding: 5px; font-size: 10px;">Toggle Light Mode</button>
+        </div>
     </div>
     <div class=" colorSelector">
         <div>
-            <p>color Background</p>
+            <p>color BG</p>
             <input type="color" name="colorBackground" id="1" value="#0A0A0A">
             <p class="color1">HEX</p>
         </div>
@@ -560,11 +564,6 @@
             <input type="color" name="mtrBorder" id="18" value="#8800cc">
             <p class="color18">HEX</p>
         </div>
-        
-    </div>
-    <div class="pageBG">
-        <button id="toggle" style="font-family: 'QuinqueFive'; margin-left: 30px; width: 150px; background-color: rgba(255, 255, 255, 1); color: black; box-sizing: border-box; padding: 10px;">Toggle Light Mode</button>
-        <button id="export" style="font-family: 'QuinqueFive'; margin-left: 30px; width: 150px; background-color: rgba(255, 255, 255, 0); color: white;">Export</button>
     </div>
 </body>
 <script src="colorpicker.iife.js"></script>
