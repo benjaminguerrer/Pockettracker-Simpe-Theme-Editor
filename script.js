@@ -18,7 +18,11 @@ const mtrHigh = document.getElementById('17');
 const mtrBorder = document.getElementById('18');
 const toggleLight = document.getElementById('toggle');
 const exportButton = document.getElementById('export');
+const importButton = document.getElementById('import');
+const importFile = document.getElementById('importFile')
 let toggleState = false;
+
+document.querySelector('#name').value = "";
 
 let allColors = [
     colorBackground,
@@ -46,6 +50,7 @@ const picker1 = new ColorPicker(colorBackground, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker2 = new ColorPicker(row4th, {
@@ -53,6 +58,7 @@ const picker2 = new ColorPicker(row4th, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker3 = new ColorPicker(rowCursor, {
@@ -60,6 +66,7 @@ const picker3 = new ColorPicker(rowCursor, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker4 = new ColorPicker(rowPlay, {
@@ -67,6 +74,7 @@ const picker4 = new ColorPicker(rowPlay, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker5 = new ColorPicker(rowSelect, {
@@ -74,6 +82,7 @@ const picker5 = new ColorPicker(rowSelect, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker6 = new ColorPicker(txtTitle, {
@@ -81,6 +90,7 @@ const picker6 = new ColorPicker(txtTitle, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker7 = new ColorPicker(txtParam, {
@@ -88,6 +98,7 @@ const picker7 = new ColorPicker(txtParam, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker8 = new ColorPicker(txtValue, {
@@ -95,6 +106,7 @@ const picker8 = new ColorPicker(txtValue, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker9 = new ColorPicker(txtCursor, {
@@ -102,6 +114,7 @@ const picker9 = new ColorPicker(txtCursor, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker10 = new ColorPicker(txtEmpty, {
@@ -109,6 +122,7 @@ const picker10 = new ColorPicker(txtEmpty, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker11 = new ColorPicker(vizBG, {
@@ -116,6 +130,7 @@ const picker11 = new ColorPicker(vizBG, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker12 = new ColorPicker(vizLine, {
@@ -123,6 +138,7 @@ const picker12 = new ColorPicker(vizLine, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker13 = new ColorPicker(vizWave, {
@@ -130,6 +146,7 @@ const picker13 = new ColorPicker(vizWave, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker14 = new ColorPicker(mtrBG, {
@@ -137,6 +154,7 @@ const picker14 = new ColorPicker(mtrBG, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker15 = new ColorPicker(mtrLow, {
@@ -144,6 +162,7 @@ const picker15 = new ColorPicker(mtrLow, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 const picker16 = new ColorPicker(mtrMid, {
@@ -151,18 +170,21 @@ const picker16 = new ColorPicker(mtrMid, {
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 const picker17 = new ColorPicker(mtrHigh, {
   submitMode: 'instant',
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 const picker18 = new ColorPicker(mtrBorder, {
   submitMode: 'instant',
   enableAlpha: false,
   enableEyedropper: true,
   dialogPlacement: 'bottom',
+  formats: ['hex', 'rgb', 'hsv', 'hsl', 'oklch']
 })
 
 picker1.setColor('#0A0A0A');
@@ -196,6 +218,7 @@ toggleLight.addEventListener('click', (event) => {
         document.querySelector('#name').style.borderColor = "#000000";
         document.querySelector('#name').classList.add("custom-placeholder");
         document.querySelector('#export').style.color = "#000000";
+        document.querySelector('#import').style.color = "#000000";
         document.documentElement.dataset.cpTheme = "light";
         document.documentElement.dataset.bsTheme = "light";
         toggleState = true;
@@ -209,6 +232,7 @@ toggleLight.addEventListener('click', (event) => {
         document.querySelector('#name').style.borderColor = "#ffffff";
         document.querySelector('#name').classList.remove("custom-placeholder");
         document.querySelector('#export').style.color = "#ffffff";
+        document.querySelector('#import').style.color = "#ffffff";
         document.documentElement.dataset.cpTheme = "dark";
         document.documentElement.dataset.bsTheme = "dark";
         toggleState = false;
@@ -557,6 +581,16 @@ function hexToArgb32(hex) {
     return parseInt(hex, 16);
 }
 
+function argb32ToHex(argb) {
+    // Convert to unsigned 32-bit integer
+    argb = Number(argb) >>> 0;
+
+    // Extract RGB, ignoring alpha
+    const rgb = argb & 0x00FFFFFF;
+
+    return '#' + rgb.toString(16).padStart(6, '0').toUpperCase();
+}
+
 function exportToJSON() {
     const name = document.getElementById('name').value || "Default";
 
@@ -580,7 +614,6 @@ function exportToJSON() {
         meterMid: hexToArgb32(picker16.color.string('hex')),
         meterHigh: hexToArgb32(picker17.color.string('hex')),
         meterBorder: hexToArgb32(picker18.color.string('hex')),
-        visualizerType: "OCTA", 
     };
 
     const jsonString = JSON.stringify(userData, null, 4);
@@ -600,3 +633,53 @@ function exportToJSON() {
 exportButton.addEventListener('click', (event) => {
     exportToJSON();
 })
+
+function importFromJSON(data) {
+    picker1.setColor(argb32ToHex(data.background));
+    picker2.setColor(argb32ToHex(data.rowEvery4th));
+    picker3.setColor(argb32ToHex(data.rowCursor));
+    picker4.setColor(argb32ToHex(data.rowPlayback));
+    picker5.setColor(argb32ToHex(data.rowSelection));
+
+    picker6.setColor(argb32ToHex(data.textTitle));
+    picker7.setColor(argb32ToHex(data.textParam));
+    picker8.setColor(argb32ToHex(data.textValue));
+    picker9.setColor(argb32ToHex(data.textCursor));
+    picker10.setColor(argb32ToHex(data.textEmpty));
+
+    picker11.setColor(argb32ToHex(data.vizBackground));
+    picker12.setColor(argb32ToHex(data.vizCenterLine));
+    picker13.setColor(argb32ToHex(data.vizWave));
+
+    picker14.setColor(argb32ToHex(data.meterBackground));
+    picker15.setColor(argb32ToHex(data.meterLow));
+    picker16.setColor(argb32ToHex(data.meterMid));
+    picker17.setColor(argb32ToHex(data.meterHigh));
+    picker18.setColor(argb32ToHex(data.meterBorder));
+
+    document.getElementById('name').value = data.name || "";
+}
+
+importButton.addEventListener('click', () => {
+    importFile.click();
+})
+
+importFile.addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    try {
+        const text = await file.text();
+        const data = JSON.parse(text);
+
+        importFromJSON(data);
+
+    } catch (error) {
+        console.error("Failed to import .ptt file:", error);
+        alert("The selected file is not a valid .ptt file.");
+    }
+
+    // Allows selecting the same file again
+    event.target.value = "";
+});

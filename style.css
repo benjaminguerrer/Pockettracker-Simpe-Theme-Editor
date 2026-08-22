@@ -377,7 +377,7 @@ div.cp_caret {
     margin-top: 5px;
 }
 
-#toggle, #export {
+#toggle, #export, #import {
     width: 80px;
     padding: 0px;
     margin: 0px;
@@ -385,7 +385,7 @@ div.cp_caret {
     border: 0px;
 }
 
-#toggle:hover, #export:hover {
+#toggle:hover, #export:hover, #import:hover {
     background-color: gray;
     cursor: pointer;
 }

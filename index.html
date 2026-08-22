@@ -109,14 +109,14 @@
                     </div>
                     <div class="sequenceMarked">
                         <p id="param">00</p>
-                        <p id="value">00</p>
-                        <p id="txtCursor">01</p>
-                        <p id="value">02</p>
-                        <p id="value">03</p>
-                        <p id="value">04</p>
+                        <p id="value">01</p>
+                        <p id="txtEmpty">--</p>
+                        <p id="txtCursor">03</p>
+                        <p id="txtEmpty">--</p>
                         <p id="value">05</p>
-                        <p id="value">06</p>
+                        <p id="txtEmpty">--</p>
                         <p id="value">07</p>
+                        <p id="value">--</p>
                     </div>
                     <div class="sequenceBlock">
                         <p id="txtEmpty">01</p>
@@ -129,7 +129,7 @@
                         <p id="txtEmpty">--</p>
                         <p id="txtEmpty">--</p>
                     </div>
-                    <div class="sequencePlayhead">
+                    <div class="sequenceBlock">
                         <p id="txtEmpty">02</p>
                         <p id="txtEmpty">--</p>
                         <p id="txtEmpty">--</p>
@@ -151,16 +151,16 @@
                         <p id="txtEmpty">--</p>
                         <p id="txtEmpty">--</p>
                     </div>
-                    <div class="sequenceFourth">
+                    <div class="sequencePlayhead">
                         <p id="param">04</p>
                         <p id="txtEmpty">--</p>
+                        <p id="value">02</p>
                         <p id="txtEmpty">--</p>
+                        <p id="txtCursor">04</p>
                         <p id="txtEmpty">--</p>
+                        <p id="value">06</p>
                         <p id="txtEmpty">--</p>
-                        <p id="txtEmpty">--</p>
-                        <p id="txtEmpty">--</p>
-                        <p id="txtEmpty">--</p>
-                        <p id="txtEmpty">--</p>
+                        <p id="value">08</p>
                     </div>
                     <div class="sequenceBlock">
                         <p id="txtEmpty">05</p>
@@ -470,6 +470,8 @@
         <input type="text" name="templateName" id="name" style="font-family: 'QuinqueFive', sans-serif; box-sizing: border-box; padding: 5px; border: 4px hidden white; border-bottom-style: solid; background: black; color: white; width: 200px;" placeholder="Default">
         <div class="pageBG">
             <button id="export" style="font-family: 'QuinqueFive'; width: 150px; background-color: rgba(255, 255, 255, 0); color: white;">Export</button>
+            <input type="file" id="importFile" accept=".ptt" hidden>
+            <button id="import" style="font-family: 'QuinqueFive'; width: 150px; background-color: rgba(255, 255, 255, 0); color: white;">Import</button>
             <button id="toggle" style="font-family: 'QuinqueFive'; width: 150px; background-color: rgba(255, 255, 255, 1); color: black; box-sizing: border-box; padding: 5px; font-size: 10px;">Toggle Light Mode</button>
         </div>
     </div>
